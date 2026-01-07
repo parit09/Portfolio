@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Medieval Knight Portfolio Design System */
+
+@layer base {
+  :root {
+    --background: 15 10% 5%;
+    --foreground: 45 15% 90%;
+
+    --card: 20 8% 10%;
+    --card-foreground: 45 15% 90%;
+
+    --popover: 20 8% 10%;
+    --popover-foreground: 45 15% 90%;
+
+    --primary: 43 74% 49%;
+    --primary-foreground: 15 10% 5%;
+
+    --secondary: 20 8% 15%;
+    --secondary-foreground: 45 15% 85%;
+
+    --muted: 20 6% 18%;
+    --muted-foreground: 30 10% 55%;
+
+    --accent: 35 65% 40%;
+    --accent-foreground: 45 15% 95%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 45 15% 90%;
+
+    --border: 30 15% 20%;
+    --input: 30 15% 20%;
+    --ring: 43 74% 49%;
+
+    --radius: 0.5rem;
+
+    /* Custom Medieval Colors */
+    --gold: 43 74% 49%;
+    --gold-dark: 38 70% 35%;
+    --bronze: 30 55% 40%;
+    --steel: 220 10% 40%;
+    --steel-light: 220 8% 55%;
+    --parchment: 40 30% 85%;
+    --blood-red: 0 70% 35%;
+    
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(43 74% 49%), hsl(30 55% 40%));
+    --gradient-dark: linear-gradient(180deg, hsl(15 10% 8%), hsl(15 10% 3%));
+    --gradient-card: linear-gradient(145deg, hsl(20 8% 12%), hsl(20 8% 8%));
+    
+    /* Shadows */
+    --shadow-gold: 0 0 30px hsl(43 74% 49% / 0.3);
+    --shadow-card: 0 10px 40px hsl(0 0% 0% / 0.5);
+  }
+
+  .dark {
+    --background: 15 10% 5%;
+    --foreground: 45 15% 90%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(180deg, hsl(15 10% 8%), hsl(15 10% 3%));
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif;
+    @apply font-semibold tracking-wide;
+  }
+}
+
+@layer components {
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(43 74% 55%), hsl(30 55% 45%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-gradient-gold {
+    border: 1px solid transparent;
+    background: linear-gradient(var(--gradient-card)) padding-box,
+                linear-gradient(135deg, hsl(43 74% 49% / 0.5), hsl(30 55% 40% / 0.2)) border-box;
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 30px hsl(43 74% 49% / 0.3), 0 0 60px hsl(43 74% 49% / 0.1);
+  }
+
+  .card-medieval {
+    background: linear-gradient(145deg, hsl(20 8% 12%), hsl(20 8% 8%));
+    border: 1px solid hsl(30 15% 20%);
+    box-shadow: 0 10px 40px hsl(0 0% 0% / 0.5);
+  }
+
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(43 74% 49% / 0.5), transparent);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { box-shadow: 0 0 20px hsl(43 74% 49% / 0.3); }
+    50% { box-shadow: 0 0 40px hsl(43 74% 49% / 0.5); }
+  }
+
+  @keyframes typewriter-cursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .cursor-blink::after {
+    content: '|';
+    animation: typewriter-cursor 1s infinite;
+    color: hsl(43 74% 49%);
+  }
+}
