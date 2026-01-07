@@ -7,11 +7,13 @@ import AchievementsSection from '@/components/AchievementsSection';
 import CertificatesSection from '@/components/CertificatesSection';
 import FooterSection from '@/components/FooterSection';
 import MedievalSword3D from '@/components/MedievalSword3D';
+import KnightScene3D from '@/components/KnightScene3D';
 
 const Index = () => {
   return (
     <div className="relative min-h-screen overflow-x-hidden">
       {/* 3D Sword Background Element */}
+      <KnightScene3D />
       <MedievalSword3D />
       
       {/* Navigation */}
