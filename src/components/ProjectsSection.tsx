@@ -7,7 +7,7 @@ const projectsData = [
     company: 'Speach to Text using NLP',
     role: 'Full Stack Application',
     description: 'A gamified task management application that turns your daily tasks into epic quests. Features include XP system, achievements, party raids for team projects, and boss battles for deadlines.',
-    tech: ['Next.js', 'TypeScript', 'Prisma', 'tRPC', 'Tailwind'],
+    tech: ['Python', 'Flask', 'Django', 'Tailwind', 'NLP Models'],
     isSoon: false,
   },
   {
@@ -82,3 +82,4 @@ const ProjectsSection = () => {
 };
 
 export default ProjectsSection;
+
