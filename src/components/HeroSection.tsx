@@ -29,7 +29,7 @@ const HeroSection = () => {
             <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-gradient-gold glow-gold relative">
               <div className="absolute inset-2 rounded-full overflow-hidden bg-secondary">
                 <img
-                  src="/igris.jpg"
+                  src="/profile.png"
                   alt="Profile"
                   className="w-full h-full object-cover"
                 />
@@ -147,3 +147,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
