@@ -4,19 +4,19 @@ import RotatingCards from './RotatingCards';
 const experienceData = [
   {
     id: 1,
+    company: 'Full Time Consultant @ Morgan Stanley through Hays',
+    role: 'Associate Software Engineer',
+    description: '',
+    tech: ['Angular', 'C#', 'Python', 'MongoDB', 'Redis', 'PostgreSQL', 'Docker', 'Kubernetes'],
+    isSoon: false,
+  },
+  {
+    id: 2,
     company: 'Morgan Stanley',
     role: 'Technology Apprentice',
     description: 'Worked on development of scalable microservices architecture serving millions of users. Established best practices for code quality and deployment pipelines.',
     tech: ['Angular', 'Tailwind CSS', 'C#', 'Python', 'MongoDB', 'Redis', 'Docker', 'Kubernetes'],
     isSoon: false,
-  },
-  {
-    id: 2,
-    company: 'Coming Soon',
-    role: '',
-    description: '',
-    tech: [],
-    isSoon: true,
   },
   {
     id: 3,

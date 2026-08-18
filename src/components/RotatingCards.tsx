@@ -8,6 +8,7 @@ interface CardData {
   description: string;
   tech: string[];
   isSoon?: boolean;
+  link?: string;
 }
 
 interface RotatingCardsProps {
@@ -39,6 +40,20 @@ const RotatingCards = ({ cards, type = 'experience' }: RotatingCardsProps) => {
     right: { x: 320, scale: 0.85, opacity: 0.5, zIndex: 1, rotateY: -15 },
   };
 
+  const handleCardClick = (position: 'left' | 'center' | 'right') => {
+    if (position === 'left') {
+      rotateCards('right');
+      return;
+    }
+
+    if (position === 'right') {
+      rotateCards('left');
+      return;
+    }
+
+    rotateCards('left');
+  };
+
   return (
     <div className="relative w-full max-w-4xl mx-auto h-[450px] perspective-1000">
       <div className="relative w-full h-full flex items-center justify-center">
@@ -64,10 +79,10 @@ const RotatingCards = ({ cards, type = 'experience' }: RotatingCardsProps) => {
                     ease: 'easeInOut',
                   },
                 }}
-                onClick={() => rotateCards('left')}
+                onClick={() => handleCardClick(position)}
                 style={{ perspective: 1000 }}
               >
-                <div className={`card-medieval rounded-xl p-6 h-[380px] flex flex-col transition-all duration-300 ${position === 'center' ? 'glow-gold border-primary/50' : 'hover:border-primary/30'}`}>
+                <div className={`card-medieval rounded-xl p-6 ${type === 'project' ? 'h-[430px]' : 'h-[380px]'} flex flex-col transition-all duration-300 ${position === 'center' ? 'glow-gold border-primary/50' : 'hover:border-primary/30'}`}>
                   {/* Decorative Corner */}
                   <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-primary/50 rounded-tl-xl" />
                   <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-primary/50 rounded-tr-xl" />
@@ -83,28 +98,42 @@ const RotatingCards = ({ cards, type = 'experience' }: RotatingCardsProps) => {
                     </div>
                   ) : (
                     <>
-                      <div className="mb-4">
+                      <div className="mb-4 shrink-0">
                         <h3 className="font-serif text-xl text-gradient-gold mb-1">{card.company}</h3>
                         <p className="text-primary/80 font-medium">{card.role}</p>
                       </div>
-                      
-                      <p className="text-muted-foreground text-sm flex-1 leading-relaxed">
-                        {card.description}
-                      </p>
-                      
-                      <div className="mt-4 pt-4 border-t border-border/50">
-                        <p className="text-xs text-muted-foreground mb-2 uppercase tracking-wider">Technologies</p>
-                        <div className="flex flex-wrap gap-2">
-                          {card.tech.map((t, i) => (
-                            <span 
-                              key={i} 
-                              className="text-xs px-2 py-1 rounded bg-primary/10 text-primary border border-primary/20"
-                            >
-                              {t}
-                            </span>
-                          ))}
+
+                      <div className="flex-1 min-h-0 overflow-hidden">
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          {card.description}
+                        </p>
+
+                        <div className="mt-4 pt-4 border-t border-border/50">
+                          <p className="text-xs text-muted-foreground mb-2 uppercase tracking-wider">Technologies</p>
+                          <div className="flex flex-wrap gap-2">
+                            {card.tech.map((t, i) => (
+                              <span 
+                                key={i} 
+                                className="text-xs px-2 py-1 rounded bg-primary/10 text-primary border border-primary/20"
+                              >
+                                {t}
+                              </span>
+                            ))}
+                          </div>
                         </div>
                       </div>
+
+                      {type === 'project' && card.link ? (
+                        <a
+                          href={card.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-4 shrink-0 inline-flex items-center justify-center rounded-md border border-primary/40 bg-primary/10 px-3 py-2 text-xs font-medium uppercase tracking-wider text-primary transition-colors hover:bg-primary/20"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          View Project
+                        </a>
+                      ) : null}
                     </>
                   )}
                 </div>

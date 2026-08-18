@@ -4,31 +4,43 @@ import RotatingCards from './RotatingCards';
 const projectsData = [
   {
     id: 1,
+    company: 'High frequency Treade Matching Engine',
+    role: 'Modulelow-level systems / high-performance backend project',
+    description: 'A modular high-frequency matching engine written in C++20, focused on ultra-low latency and high throughput using lock-free data structures and custom memory management',
+    tech: ['C++20', 'Python', 'CMake', 'Boost', 'Docker'],
+    isSoon: false, 
+    link: 'https://github.com/parit09/HFT_core_engine',
+  },
+  {
+    id: 2,
     company: 'Speach to Text using NLP',
     role: 'Full Stack Application',
     description: 'A web application that converts spoken language into written text using advanced NLP techniques.',
     tech: ['Python', 'Flask', 'Django', 'Tailwind', 'NLP Models'],
     isSoon: false,
+    link: 'https://speechtotext-nlp-project-2.onrender.com',
   },
   {
-    id: 2,
+    id: 3,
     company: 'Prescripto',
     role: 'Full Stack Application',
     description: 'A online appointment booking system for doctors and patients with real-time notifications, calendar integration, and secure patient records management.',
     tech: ['React', 'Node.js', 'Express', 'MongoDB','Tailwind CSS','JWT'],
     isSoon: false,
+    link: 'https://github.com/parit09/Prescripto',
   },
   {
-    id: 3,
+    id: 4,
     company: 'RentKaro',
     role: 'Full Stack Application',
     description: 'A comprehensive car rental platform with real-time availability, secure booking, and integrated payment processing.',
     tech: ['Java', 'Spring Boot', 'Maven', 'MySQL', 'JPA','Tailwind CSS','JWT'],
     isSoon: false, 
+    link: 'https://github.com/parit09/Car-Rental-System',
   },
   {
-    id: 4,
-    company: 'Text to Image using SeaDream Deffusion Model',
+    id: 5,
+    company: 'A Chess game with custom chess engine',
     role: 'Full Stack Application',
     description: 'Comming Soon',
     tech: [],
@@ -74,7 +86,7 @@ const ProjectsSection = () => {
           transition={{ delay: 0.6 }}
           className="text-center text-muted-foreground mt-12 text-sm"
         >
-          Click on cards to explore different projects
+          Click on cards to explore projects and use View Project to open links
         </motion.p>
       </div>
     </section>

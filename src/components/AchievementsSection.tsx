@@ -20,7 +20,7 @@ const achievements = [
     id: 3,
     icon: Trophy,
     title: "Leetcode",
-    description: "1400+ rating on leetcode",
+    description: "1600+ rating on leetcode",
     year: "",
   },
   {
