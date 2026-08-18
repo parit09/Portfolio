@@ -5,7 +5,7 @@ const experienceData = [
   {
     id: 1,
     company: 'Full Time Consultant @ Morgan Stanley through Hays',
-    role: 'Associate Software Engineer',
+    role: 'Associate Software Engineer | Aug 2026 - Current',
     description: '',
     tech: ['Angular', 'C#', 'Python', 'MongoDB', 'Redis', 'PostgreSQL', 'Docker', 'Kubernetes'],
     isSoon: false,
@@ -13,7 +13,7 @@ const experienceData = [
   {
     id: 2,
     company: 'Morgan Stanley',
-    role: 'Technology Apprentice',
+    role: 'Technology Apprentice | Aug 2025 - Aug 2026',
     description: 'Worked on development of scalable microservices architecture serving millions of users. Established best practices for code quality and deployment pipelines.',
     tech: ['Angular', 'Tailwind CSS', 'C#', 'Python', 'MongoDB', 'Redis', 'Docker', 'Kubernetes'],
     isSoon: false,
